@@ -1,0 +1,1 @@
+{"virtualbox":{},"rsync":{"/vagrant":{"type":"rsync","guestpath":"/vagrant","hostpath":"C:/Users/renat/meu_projeto_vagrant","disabled":false,"__vagrantfile":true,"owner":"vagrant","group":"vagrant"}}}

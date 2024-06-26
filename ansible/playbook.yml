@@ -1,0 +1,30 @@
+---
+- hosts: vagrant
+  tasks: 
+    - name: Update all packages
+      apt:
+        update_cache: yes
+        upgrade: dist
+
+    - name: Install Apache web server
+      apt:
+        name: apache2
+        state: present
+    
+    - name: Instalar nginx
+      apt:
+        name: nginx
+        state: present
+
+    - name: Criar página Hello World
+      copy:
+        content: "Hello World"
+        dest: /var/www/html/index.html
+      notify:
+        - restart nginx
+
+  handlers:
+    - name: restart nginx
+      service:
+        name: nginx
+        state: restarted
